@@ -1,7 +1,7 @@
 pipeline{
   environment{
     IMAGE_NAME = "ldiconcept/alpinehelloworld"
-    IMAGE_TAG = "${BUILD_TAG"
+    IMAGE_TAG = "${BUILD_TAG}"
     CONTAINER_NAME = "alpinehelloworld"
     STAGING = "ynov-lucas-staging"
     PRODUCTION = "ynov-lucas-production"
