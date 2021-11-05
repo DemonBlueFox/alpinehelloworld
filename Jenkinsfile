@@ -92,5 +92,18 @@ pipeline{
         }
       }
     }
+    
+    stage ('Push Image on ducker hub'){
+      agent any
+      steps{
+        script{
+          sh '''
+            docker login -u ldiconcept -p ${PASSWORD}
+            docker push ${IMAGE_NAME}:${IMAGE_TAG}
+            docker rmi ${IMAGE_NAME}:${IMAGE_TAG}
+          '''
+        }
+      }
+    }
   }
 }
