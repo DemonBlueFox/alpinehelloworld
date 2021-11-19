@@ -108,8 +108,8 @@ pipeline{
     }
     stage ('Run container on prod host'){
           agent {label 'prod'}
-          catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
             steps{
+              catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
               script{
                 sh '''
                   docker rm -f ${CONTAINER_NAME}:
