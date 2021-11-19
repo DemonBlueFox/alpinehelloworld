@@ -106,7 +106,6 @@ pipeline{
         }
       }
     }
-    
   }
   
   stage('Deploy app on EC2-cloud Production') {
