@@ -1,4 +1,4 @@
-@Library('ynov-slackNotifier')
+@Library('ynov-slackNotifier')_
 pipeline{
   environment{
     IMAGE_NAME = "ldiconcept/alpinehelloworld"
