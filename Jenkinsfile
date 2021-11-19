@@ -125,7 +125,7 @@ pipeline{
     stage('Deploy app on EC2-cloud Production') {
                 agent any
                 when{
-                    expression{ GIT_BRANCH == 'origin/master'}
+                   expression{ GIT_BRANCH == 'origin/master'}
                 }
                 steps{
                     withCredentials([sshUserPrivateKey(credentialsId: "lucas-key", keyFileVariable: 'keyfile', usernameVariable: 'NUSER')]) {
