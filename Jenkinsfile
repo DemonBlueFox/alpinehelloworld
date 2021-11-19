@@ -109,7 +109,7 @@ pipeline{
     stage ('Run container on prod host'){
           agent {label 'prod'}
             steps{
-              catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+              catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               script{
                 sh '''
                   docker rm -f ${CONTAINER_NAME}:
@@ -121,6 +121,7 @@ pipeline{
               }
             }
           }
+    }
     stage('Deploy app on EC2-cloud Production') {
                 agent any
                 when{
