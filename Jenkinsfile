@@ -112,7 +112,7 @@ pipeline{
               catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               script{
                 sh '''
-                  sudo docker rm -f ${CONTAINER_NAME}:
+                  sudo docker rm -f ${CONTAINER_NAME}
                   sudo docker run -d --name ${CONTAINER_NAME} -e PORT= -p 80:5000 ${IMAGE_NAME}:${IMAGE_TAG}
                   sleep 5
                   curl http://localhost:80 | grep -q "Hello world!"
